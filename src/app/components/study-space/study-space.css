@@ -1,0 +1,127 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-bg-dark), var(--color-bg-light));
+}
+
+h1 {
+    text-align: center;
+    margin: 30px;
+}
+
+.study-board {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.study-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 2 1 0;
+}
+
+.study-card app-card {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.study-card .interaction {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.interaction-wrapper {
+    display:flex;
+    gap: 20px;
+    box-shadow: var(--color-shadow) 0px 2px 2px 3px inset;
+}
+
+.interaction-wrapper .action {
+    height: 50px;
+    width: 100px;
+    margin: 10px;
+    border: none;
+    font-size: 14px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    box-shadow: 0px 3px 2px var(--color-shadow-secondary);
+    transition: transform 0.2s ease;
+}
+
+.interaction-wrapper .action:hover {
+    background-color: var(--color-secondary-light);
+    color: var(--color-white);
+    box-shadow: 0px 3px 2px var(--color-secondary);
+    transform: scale(1.06);
+}
+
+.interaction-wrapper .action:disabled {
+    background-color: var(--color-desactivated);
+    color: var(--color-text-muted);
+    box-shadow: 0px 3px 2px var(--color-text-muted);
+    transform: none;
+}
+
+.left-side-bar {
+    min-width: 200px;
+    max-width: 250px;
+    flex: 0 0 0;
+}
+
+.side-bar {
+    min-width: 250px;
+    max-width: 350px;
+    flex: 1 1 0;
+}
+
+.stats {
+   display: flex;
+   flex-direction: column;
+   margin: 5px;
+   box-sizing: border-box;
+   border-radius: 4px;
+   box-shadow: 0px 4px 2px var(--color-shadow-primary);
+   overflow: hidden;
+}
+
+.stats h3 {
+    background-color: var(--color-primary);
+    margin: 0px;
+    padding: 5px;
+}
+
+.end-wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+.studies-ended-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 250px;
+    width: 450px;
+    background-color: var(--color-primary);
+    box-shadow: 0px 4px 2px var(--color-shadow-primary);
+    border-radius: 4px;
+}

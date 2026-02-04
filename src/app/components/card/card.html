@@ -1,0 +1,8 @@
+<div class="card"
+    [class.front]="isFront()"
+    [class.back]="!isFront()">
+    <div class="card-content-wrapper">
+        <ng-content></ng-content>
+    </div>
+</div>   
+

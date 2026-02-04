@@ -1,0 +1,64 @@
+<div class="main">
+    <h1>{{sheetName}}</h1>
+    
+    @if(succeededWords === totalWords)
+    {
+        <section class="end-wrapper">
+            <app-studies-ended class="studies-ended-board" (restartClicked)="reset()" />
+        </section>
+    }
+    @else {
+        <section class="study-board">
+             
+                <div class="left-side-bar">
+                </div>
+            
+            <div class="study-card">
+                
+                @if(showFront)
+                {
+                    <app-card [isFront]="showFront">
+                        <app-study-content
+                            [headers]="frontColumns"
+                            [words]="cards"
+                            [index]="index">
+                        </app-study-content>
+                    </app-card>
+                }
+                @else 
+                {
+                    <app-card [isFront]="showFront">
+                        <app-study-content
+                            [headers]="backColumns"
+                            [words]="cards"
+                            [index]="index">
+                        </app-study-content>
+                    </app-card>
+                }
+                <section class="interaction">
+                    <div class="interaction-wrapper">
+                        <button class="action flip" (click)="onFlipCard()">Flip</button>
+                        <button class="action next" (click)="onNext()" [disabled]="!showActions">Next</button>
+                        <button class="action forgot" (click)="onForgot()" [disabled]="!showActions">Forgot</button>
+                    </div>
+                </section>
+            </div>
+            
+            <article class="side-bar">
+                <div class="stats">
+                    <h3>Succeeded Words : {{succeededWords}}/{{totalWords}}</h3>
+                    <h3>Forgot : {{forgotten}}</h3>
+                </div>
+            </article>
+
+        </section>
+    }
+
+</div>
+
+
+
+
+
+
+

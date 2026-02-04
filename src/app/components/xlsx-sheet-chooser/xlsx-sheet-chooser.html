@@ -1,0 +1,14 @@
+<div class="main">
+    <h1>Choose a sheet</h1>
+    <div class="content">
+        <div class="sheets-shadow">
+            <div class="sheets">
+                @for(sheet of sheets; track $index){
+                    <app-sheet class="sheet-container" [sheetName]="sheet.sheetName" [rowCount]="sheet.entries.length" (sheetClicked)="onSheetClicked($event)" />
+                }
+            </div>
+        </div>
+        
+    </div>
+</div>
+

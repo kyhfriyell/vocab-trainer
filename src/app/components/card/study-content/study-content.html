@@ -1,0 +1,6 @@
+<div class="content-scroll">
+    @for(header of headers(); track $index){
+        <p class="card-value" [class.first-card-value]="$index === 0">{{ words()[index()][header] }}</p>
+    }
+</div>
+

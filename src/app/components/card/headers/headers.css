@@ -1,0 +1,15 @@
+.card-value {
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.first-card-value {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 0px;
+    color: var(--color-text-black);
+}

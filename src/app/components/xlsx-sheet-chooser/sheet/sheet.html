@@ -1,0 +1,15 @@
+@if(rowCount() > 0)
+{
+    <div class="sheet" (click)="onClicked()">
+        <p class="name">{{sheetName()}}</p> <p class="count">{{rowCount()}}</p>
+    </div>
+}
+@else 
+{
+    <div class="sheet empty">
+        <p class="name">{{sheetName()}}</p> <p class="count">{{rowCount()}}</p>
+    </div>
+}
+
+
+

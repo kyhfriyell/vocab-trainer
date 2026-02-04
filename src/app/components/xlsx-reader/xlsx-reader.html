@@ -1,0 +1,37 @@
+<div class="main">
+  <h1>Vocab-Trainer</h1>
+  <h3>Study your own vocabulary until you master it !</h3>
+  
+  <div
+  class="drop-zone"
+  [class.drag-over]="isDragOver"
+  (click)="fileInput.click()"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave($event)"
+  (drop)="onDrop($event)"
+  >
+    <input
+      #fileInput
+      type="file"
+      accept=".xlsx,.xls"
+      hidden
+      (change)="onFileSelect($event)"
+    />
+
+    <div class="content">
+      <p>Drag & drop your Excel file here</p>
+      <p>or</p>
+      <button
+        type="button"
+        (click)="fileInput.click(); $event.stopPropagation()"
+      >
+        Select file
+      </button>
+    </div>
+  </div>
+
+  <div class="warning-message">
+    <p>Your sheets need a header row for the app to function properly</p>
+  </div>
+  
+</div>

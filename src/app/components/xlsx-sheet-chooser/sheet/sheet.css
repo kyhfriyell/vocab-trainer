@@ -1,0 +1,25 @@
+.sheet {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    background-color: var(--color-primary);
+    overflow: hidden;
+}
+
+
+.sheet.empty {
+    background-color: var(--color-desactivated);
+}
+
+.name {
+    width: 80%;
+}
+
+.sheet.empty .name, .sheet.empty .count {
+    color: var(--color-text-muted);
+}
+
+
+.count {
+
+}

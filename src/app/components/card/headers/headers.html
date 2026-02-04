@@ -1,0 +1,4 @@
+@for(header of headers(); track $index){
+   <p class="card-value" [class.first-card-value]="$index === 0">#{{$index+1}} - {{ header}}</p>
+}
+ 

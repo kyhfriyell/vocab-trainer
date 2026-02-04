@@ -1,0 +1,98 @@
+<section class="main">
+    <div class="header">
+        <h1>Set-up your cards</h1>
+        <div class="header-right">
+            <h3>Words count {{wordCount}}</h3>
+            <button  type="button" (click)="onStart()" [disabled]="!canStart">Start Learning</button>
+        </div>
+        
+    </div>
+    
+    <div class="cards">
+        <div class="front-view">
+            <h3>Select columns for the front view</h3>
+            <div class="headers-table-wrapper">
+                <div class="headers-table">
+                    <table>
+                        <tr>
+                            @for(header of sheetHeaders; track header)
+                            {
+                                <th [class.selected]="isSelected(header, frontColumns())" (click)="toggleFrontHeaderFromName(header)">{{header}}</th>
+                            }
+                        </tr>
+                        <tr>
+                            @for(header of sheetHeaders; track header)
+                            {
+                                <td [class.selected]="isSelected(header, frontColumns())" (click)="toggleFrontHeaderFromName(header)">
+                                    <input
+                                        type="checkbox"
+                                        [checked]="isSelected(header, frontColumns())"
+                                    />
+                                    
+                                    @if(isSelected(header, frontColumns()))
+                                    {
+                                        <span>
+                                            #{{ getPosition(header, frontColumns()) }}
+                                        </span>
+                                    }
+                                </td>
+                            }  
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <app-card [isFront]="true" class="card-comp">
+                <app-headers
+                    [headers]="frontColumns()">
+                </app-headers>
+            </app-card>
+        </div>
+        
+        <div class="back-view">
+            <h3>Select columns for the back view</h3>
+            <div class="headers-table-wrapper">
+                <div class="headers-table">
+                    <table>
+                        <tr>
+                            @for(header of sheetHeaders; track header)
+                            {
+                                <th [class.selected]="isSelected(header, backColumns())" (click)="toggleBackHeaderFromName(header)">{{header}}</th>
+                            }
+                        </tr>
+                        <tr>
+                            @for(header of sheetHeaders; track header)
+                            {
+                                <td [class.selected]="isSelected(header, backColumns())" (click)="toggleBackHeaderFromName(header)">
+                                        <input
+                                            type="checkbox"
+                                            [checked]="isSelected(header, backColumns())"
+                                        />
+
+                                    @if(isSelected(header, backColumns()))
+                                    {
+                                        <span>
+                                            #{{ getPosition(header, backColumns()) }}
+                                        </span>
+                                    }
+                                </td>
+                            }
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            
+          
+            <app-card [isFront]="false" class="card-comp">
+                <app-headers
+                    [headers]="backColumns()">
+                </app-headers>
+            </app-card>
+        </div>
+    </div>
+    
+    
+
+    
+</section>
