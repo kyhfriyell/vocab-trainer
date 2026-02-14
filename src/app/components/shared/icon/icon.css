@@ -1,0 +1,45 @@
+
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+/* ICON SIZE */
+svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+}
+
+/* MICRO ANIMATION */
+.icon-wrapper:hover svg {
+  transform: translateY(-2px) scale(1.05);
+}
+
+
+/* TOOLTIP */
+.icon-wrapper::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-bg-dark);
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.icon-wrapper:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+

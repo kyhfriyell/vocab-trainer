@@ -1,0 +1,68 @@
+.footer {
+  background-color: var(--color-black);
+  padding: 3px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing);
+  opacity: 0.9;
+  overflow-x: clip;
+}
+
+.footer:hover {
+  opacity: 1;
+}
+
+/* Signature text */
+.made-by {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.made-by strong {
+  color: var(--color-primary-dark);
+}
+
+/* Icons container */
+.socials {
+  display: flex;
+  gap: var(--spacing-small);
+  flex-wrap: wrap; 
+  justify-content: flex-end;
+  flex: 1;
+}
+
+/* Icon links */
+.socials a {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-dark); /*  Sets here the icon color so we can change it when links wrapper are on hover */
+  border-radius: 10px;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.socials a:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+
+@media (max-width: 480px) {
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 3px;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+}

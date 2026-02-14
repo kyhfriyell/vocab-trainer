@@ -1,0 +1,14 @@
+<span class="icon-wrapper" [attr.data-tooltip]="tooltip()">
+
+    @if(icon()){
+        <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+        >
+            <path [attr.d]="icon()?.path"></path>
+        </svg>
+    }
+
+
+</span>

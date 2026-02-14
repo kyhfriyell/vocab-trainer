@@ -17,11 +17,9 @@ app-root {
 .main {
     display: flex;
     flex-direction: column;
-    min-height: 100dvh;
+    flex: 1;
     background: linear-gradient(to bottom, var(--color-bg-dark), var(--color-bg-light));
     padding: 20px; /* So we avoid elements to touch the screen borders on mobile */
-    gap: var(--spacing); /* To always have gaps, even on small screens */
-
     justify-content: space-around;
     
 }
@@ -49,6 +47,7 @@ app-root {
 
   --color-desactivated: rgb(177, 177, 177);
   --color-white: white;
+  --color-black: rgb(26, 26, 26);
 
   /* Backgrounds */
   --color-bg-dark: #2d2d2d; /*rgb(86, 168, 141);*/ /*rgb(163, 96, 79); */ /*rgb(196, 176, 122); */ /*#2d2d2d;*/
@@ -59,10 +58,10 @@ app-root {
   /* Text */
   --color-text-muted: #808080;
   --color-text-black: black;
-  --font-size-normal-text: clamp(0.90rem, 1vw, 1.1rem); /* clamp auto calculates a value between (min, prefered, max) */
-  --font-size-bigger-text: clamp(1.1rem, 1.3vw, 1.35rem);
-  --font-size-h1: clamp(2rem, 3vw, 2.5rem);
-  --font-size-h3: clamp(1.4rem, 2vw, 1.9rem);
+  --font-size-normal-text: clamp(0.80rem, 1vw, 1.1rem); /* clamp auto calculates a value between (min, prefered, max) */
+  --font-size-bigger-text: clamp(1rem, 1.3vw, 1.35rem);
+  --font-size-h1: clamp(1.8rem, 3vw, 2.3rem);
+  --font-size-h3: clamp(1.2rem, 2vw, 1.7rem);
 
 
   /* Shadows */
@@ -73,6 +72,7 @@ app-root {
 
   /* Gaps */ 
   --spacing: clamp(5px, 2vw, 20px);
+  --spacing-small: clamp(5px, 2vw, 10px);
 
   /* Padding */
   --padding-normal: 10px;
