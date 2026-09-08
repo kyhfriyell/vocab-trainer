@@ -44,6 +44,7 @@
     flex-direction: column;
     flex: 1 1 0;
     justify-content: center;
+    overflow: auto;
 }
 
 .card-size {
@@ -51,6 +52,7 @@
     flex-direction: column;
     flex: 1;
     padding: 20px 0px;
+    overflow: auto;
 }
 
 .interaction {
