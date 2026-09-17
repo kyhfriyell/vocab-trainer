@@ -1,0 +1,120 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.inner-main
+{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-small);
+    min-height: 0;
+}
+
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+}
+
+.header h1 {
+    text-align: center;
+}
+
+
+.header .header-actions {
+  display: flex;
+  gap: var(--spacing);
+  justify-content: center;
+}
+
+/* ::ng-deep to override the button component css properties */
+::ng-deep .custom-button button {
+  min-width: min(45dvw, 100px);
+}
+
+.cards-area {
+    display: flex;
+    justify-content: center;
+    flex: 1 1 0;
+    min-height: 0;
+    width: 100%;
+}
+
+.cards-area-shadowed-box {
+    display: flex;
+    flex-direction: column;
+    width: min(90dvw, 900px);
+    min-height: 0;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: var(--color-shadow) 0px 2px 2px 3px inset;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-content: flex-start;
+    align-items: flex-start;
+
+    gap: var(--spacing-small-noclamp);
+    padding: 10px 15px;
+
+    width: 100%;
+    height: 0; /* height: 0 and flex: 1 1 0, for your element to not make the container bigger but scroll when it's too big */
+    flex: 1 1 0;
+    min-height: 0;
+
+    overflow-y: auto;
+}
+
+.card-wrapper {
+    display: flex;
+    width: 18%;
+}
+
+.card-border {
+    width: 100%;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.card-border-last-selected{
+    border: 2px solid var(--color-primary);
+}
+
+p {
+    margin: 0px;
+    color: var(--color-text-black);
+    overflow-wrap: break-word;
+}
+
+
+/* Break points :
+  480px -> small phones
+  768px → tablet
+  1024px → small desktop
+  1280px → large desktop
+*/
+
+@media (max-width: 768px) {
+    .card-wrapper {
+        display: flex;
+        width:31%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-wrapper {
+        display: flex;
+        width:100%;
+    }
+}

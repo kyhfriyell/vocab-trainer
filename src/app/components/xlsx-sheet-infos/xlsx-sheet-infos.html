@@ -1,11 +1,16 @@
 <section class="inner-main">
     <div class="header">
-        <h1>Set-up your cards</h1>
+        <div class="hearders">
+            <h1>Set-up your cards</h1>
+            <h3 [textContent]="sheetName()"></h3>
+        </div>
+        <div class="header-actions">
+            <app-button class="custom-button" type="secondary" (click)="onStart()" [disabled]="!canStart">Start</app-button>
+            <app-button class="custom-button" type="secondary" (click)="splitPack()">Start Split</app-button>
+        </div>
         <div class="header-actions">
             <app-button class="custom-button" type="primary" (click)="switchSide()">Switch Side</app-button>
-            <app-button class="custom-button" type="secondary" (click)="onStart()" [disabled]="!canStart">Start Learning</app-button>
         </div>
-        
     </div>
     
     <div class="cards-area">

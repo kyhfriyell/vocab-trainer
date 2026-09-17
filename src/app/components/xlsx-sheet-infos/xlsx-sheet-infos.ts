@@ -19,13 +19,17 @@ export class XlsxSheetInfos implements OnInit {
   private headers: string[] = [];
   private showingFront = true;
   
+  sheetName = signal("");
   backColumns = signal<string[]>([]);
   frontColumns = signal<string[]>([]);
 
   ngOnInit() 
   {
       let sheet = this.fileService.sheet;
+
+      this.sheetName.set(sheet.sheetName);
       let rows = sheet.entries;
+
       // filter to remove columns that are not used in any row
       this.headers = Object.keys(sheet.entries[0]).filter(col =>
         rows.some(row => row[col] !== null && row[col] !== undefined) 
@@ -91,9 +95,24 @@ export class XlsxSheetInfos implements OnInit {
   {
     if(this.canStart)
     {
-      this.fileService.setSelectedColumns(this.frontColumns(), this.backColumns());
+      this.saveColumns();
+      this.fileService.deactivateSplit();
       this.router.navigate(['/study-space']);
     }
+  }
+
+  splitPack()
+  {
+    if(this.canStart)
+    {
+      this.saveColumns();
+      this.router.navigate(['/split-pack']);
+    }
+  }
+
+  private saveColumns()
+  {
+    this.fileService.setSelectedColumns(this.frontColumns(), this.backColumns());
   }
 
 }

@@ -19,7 +19,7 @@ app-root {
     flex-direction: column;
     flex: 1;
     background: linear-gradient(to bottom, var(--color-bg-dark), var(--color-bg-light));
-    padding: 20px; /* So we avoid elements to touch the screen borders on mobile */
+    padding: var(--spacing-small); /* So we avoid elements to touch the screen borders on mobile */
     justify-content: space-around;
     
 }
@@ -75,6 +75,7 @@ app-root {
   --spacing: clamp(5px, 2vw, 20px);
   --spacing-small: clamp(5px, 2vw, 10px);
   --spacing-small-noclamp : 10px;
+  --spacing-xsmall-noclamp: 5px 10px;
 
   /* Padding */
   --padding-normal: 10px;

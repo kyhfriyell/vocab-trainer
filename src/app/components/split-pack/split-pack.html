@@ -1,0 +1,36 @@
+<section class="inner-main">
+     <div class="header">
+            <h1 [textContent]=" wordCount() + ' cards'"></h1>
+            <h3 [textContent]="'Split into ' + splitCount() + ' packs of ~' + nbCardPerPack + ' cards'"></h3>
+        <div class="header-actions">
+            <app-button class="custom-button" type="secondary" 
+            (click)="increaseSplitCount()" [disabled]="splitCount() >= (wordCount() / 2)">+</app-button>
+            <app-button class="custom-button" type="secondary" 
+            (click)="decreaseSplitCount()" [disabled]="splitCount() <= 1">-</app-button>
+        </div>
+    </div>
+
+    <div class="cards-area">
+        <div class="cards-area-shadowed-box">
+            <div class="cards">
+                @for (i of [].constructor(splitCount()) ; track $index;)
+                {
+                    <section class="card-wrapper" (click)="start($index)">
+                        <div class="card-border" [ngClass]="isLastSelectedPack($index) ? 'card-border-last-selected':''">
+                            <app-card [isFront]="true">
+                                <div class="card-content">
+                                    <p [textContent]="$index + 1 + '#'"></p>
+                                    <p [textContent]="getCardsNumber($index)"></p>
+                                </div>
+                            </app-card>
+                        </div>
+                    </section>
+                }
+            </div>
+        </div>
+         
+        
+    </div>
+
+
+</section>

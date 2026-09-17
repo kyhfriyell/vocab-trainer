@@ -6,7 +6,7 @@ import {
   siInstagram,
   siTiktok,
   siItchdotio
-} from 'simple-icons/icons';
+} from 'simple-icons';
 
 @Component({
   selector: 'app-icon',

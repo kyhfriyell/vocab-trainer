@@ -32,7 +32,7 @@ export class StudySpace implements OnInit {
 
   public reset()
   {
-    this.cards = [...this.fileService.sheet.entries];
+    this.cards = [...this.fileService.cards];
     this.totalWords = this.cards.length;
     this.shuffle(this.cards);
     this.succeededWords = 0;
