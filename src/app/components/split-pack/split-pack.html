@@ -4,9 +4,9 @@
             <h3 [textContent]="'Split into ' + splitCount() + ' packs of ~' + nbCardPerPack + ' cards'"></h3>
         <div class="header-actions">
             <app-button class="custom-button" type="secondary" 
-            (click)="increaseSplitCount()" [disabled]="splitCount() >= (wordCount() / 2)">+</app-button>
+            (click)="increaseSplitCount()" [disabled]="!canIncreaseSplitCount()">+</app-button>
             <app-button class="custom-button" type="secondary" 
-            (click)="decreaseSplitCount()" [disabled]="splitCount() <= 1">-</app-button>
+            (click)="decreaseSplitCount()" [disabled]="!canDecreaseSplitCount()">-</app-button>
         </div>
     </div>
 

@@ -58,17 +58,20 @@ export class FileService {
       // If we split the pack
       if(this.splitInfos.nbSplit > 1)
       {
-        cardsToTake = allCards.length / this.splitInfos.nbSplit;
-
+        cardsToTake = Math.floor(allCards.length / this.splitInfos.nbSplit);
+        console.log("cards to take 1 : " + cardsToTake);
         // If we selected the last pack
         if(this.splitInfos.lastSelectedPack == this.splitInfos.nbSplit - 1){
           cardsToTake += allCards.length % this.splitInfos.nbSplit;
+          console.log("cards to take 2 (last pack) : " + cardsToTake);
         }
         
-        startIndex = (allCards.length / this.splitInfos.nbSplit) * this.splitInfos.lastSelectedPack;
-        
+        startIndex = Math.floor(allCards.length / this.splitInfos.nbSplit) * this.splitInfos.lastSelectedPack;
+        console.log("start index : " + startIndex);
         // Select cards between two indexes
-        cardsToStudy = allCards.slice(startIndex, startIndex + cardsToTake -1);
+        cardsToStudy = allCards.slice(startIndex, startIndex + cardsToTake);
+        console.log("cards taken : " + cardsToStudy.length);
+        console.log("end index : " + (startIndex + cardsToTake));
         return cardsToStudy;
       }
     }

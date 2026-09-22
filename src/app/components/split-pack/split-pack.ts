@@ -25,15 +25,21 @@ export class SplitPack {
       this.wordCount.set(sheet.entries.length);
 
       let splitInfos = this.fileService.splitInfos;
-      this.splitCount.set(splitInfos.nbSplit > this.wordCount() / 2 ? 1 : splitInfos.nbSplit); // set to 1 if the initial split is too high
+      this.splitCount.set(splitInfos.nbSplit > Math.floor(this.wordCount()) / 2 ? 1 : splitInfos.nbSplit); // set to 1 if the initial split is too high
       this.lastSelectedPackIndex.set(splitInfos.lastSelectedPack > this.splitCount() -1 ? -1 : splitInfos.lastSelectedPack); // reset if last selected pack not showing 
-
-      console.log(this.lastSelectedPackIndex());
   }
 
   get nbCardPerPack()
   {
     return Math.floor(this.wordCount() / this.splitCount());
+  }
+
+  public canIncreaseSplitCount(){
+    return this.splitCount() <  Math.floor(this.wordCount() / 2);
+  }
+
+   public canDecreaseSplitCount(){
+    return this.splitCount() > 1;
   }
 
   public increaseSplitCount()
